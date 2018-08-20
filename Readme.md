@@ -1,6 +1,6 @@
 # Token Regex
 
-Data extraction on tokens of segmented sentences.
+Data extraction on tokens of segmented sentences. In any JS environment (browser, election, IOT...)
 
 ## Usage
 
