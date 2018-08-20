@@ -15,7 +15,7 @@ match parts you want ↓🔬
 ```js
 import tokenRegex from 'token-regex';
 
-const rules = [`companyName:公司名 营业成本 changeDirection:动词<增长>`];
+const rules = [`companyName:#公司名 营业成本 changeDirection:#动词<增长>`];
 const tokens = [
   { word: '小米新品', pos: 'ntc' },
   { word: '公司', pos: 'n' },
@@ -36,6 +36,42 @@ const { companyName, changeDirection } = tokenRegex({ rules })(tokens);
 console.log({ companyName, changeDirection });
 // { companyName: '小米新品', changeDirection: '增长' }
 ```
+
+## Syntax of rules
+
+Rule is space separated tokens.
+
+### Match POS tag
+
+`#公司名 #时间词 #助词` will match `公司2017年的`.
+  
+Placed after the colon is the POS tag you want to match.
+  
+`#公司名 #助词` will match `公司2017年的` too.
+
+You can omit some intermediate POS tag, rule will still match.
+
+### Named capture
+
+`companyName:#公司名 #助词` will put matching result of `#公司名` into result JSON, under the key `companyName`.
+
+This works like destructuring assignment syntax in JavaScript: `const { companyName } = result;`.
+
+### Refinement
+
+`#动词<增长>` will match `增长` or `降低`.
+
+This works like generic types, where you tell it only match token similar to `增长`. This feature is power by synonym dictionary and your custom dictionaries.
+
+### Literal
+
+`营业 成本` will match `营业成本` or `营业的成本`.
+
+Just like we can match POS tag, we can match literal too.
+
+`营业 本钱` will match `营业成本`.
+
+If literal matching failed, it will try to match token that is similar to that literal. This feature is power by synonym dictionary and your custom dictionaries.
 
 ## How to get tokens
 
