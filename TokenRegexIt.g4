@@ -16,9 +16,9 @@ tokenRegexBlock:
 WHITESPACE: [ \t\r\n\f]+ -> skip;
 
 // premitives
-STRING: (ESC | ~ ["\\])+;
+STRING: (ESCAPED_CHAR | HEX)+;
 INT: [0-9]+;
 
-fragment ESC: '\\' (["\\/bfnrt] | UNICODE);
+fragment ESCAPED_CHAR: '\\' (["\\/bfnrt] | UNICODE);
 fragment UNICODE: 'u' HEX HEX HEX HEX;
 fragment HEX: [0-9a-fA-F];
