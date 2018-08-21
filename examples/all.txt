@@ -1,0 +1,1 @@
+companyName:#公司名 营业成本? changeDirection:(#动词<增长>|#副词<过高>)

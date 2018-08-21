@@ -4,6 +4,26 @@
     {
       "type": "antlr-debug",
       "request": "launch",
+      "name": "all",
+      "input": "examples/all.txt",
+      "grammar": "TokenRegexIt.g4",
+      "startRule": "tokenRegex",
+      "printParseTree": true,
+      "visualParseTree": true
+    },
+    {
+      "type": "antlr-debug",
+      "request": "launch",
+      "name": "logic",
+      "input": "examples/logic.txt",
+      "grammar": "TokenRegexIt.g4",
+      "startRule": "tokenRegex",
+      "printParseTree": true,
+      "visualParseTree": true
+    },
+    {
+      "type": "antlr-debug",
+      "request": "launch",
       "name": "group",
       "input": "examples/group.txt",
       "grammar": "TokenRegexIt.g4",
