@@ -7,7 +7,7 @@ tokenRegex: tokenRegexBlock+;
 tokenRegexBlock:
 	'#' STRING (refinement)?				# posTag
 	| STRING ':' tokenRegexBlock			# namedCapture
-	| '(' tokenRegexBlock ')'				# group
+	| '(' tokenRegex ')'				# group
 	| STRING								# listral
 	| tokenRegexBlock '|' tokenRegexBlock	# or
 	| tokenRegexBlock '?'					# optional;
@@ -16,7 +16,7 @@ tokenRegexBlock:
 WHITESPACE: [ \t\r\n\f]+ -> skip;
 
 // premitives
-STRING: (ESCAPED_CHAR | HEX | CHINESE)+;
+STRING: (ESCAPED_CHAR | [0-9a-zA-Z] | CHINESE)+;
 INT: [0-9]+;
 
 fragment ESCAPED_CHAR: '\\' (["\\/bfnrt] | UNICODE);

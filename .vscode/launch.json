@@ -4,6 +4,16 @@
     {
       "type": "antlr-debug",
       "request": "launch",
+      "name": "group",
+      "input": "examples/group.txt",
+      "grammar": "TokenRegexIt.g4",
+      "startRule": "tokenRegex",
+      "printParseTree": true,
+      "visualParseTree": true
+    },
+    {
+      "type": "antlr-debug",
+      "request": "launch",
       "name": "refinement",
       "input": "examples/refinement.txt",
       "grammar": "TokenRegexIt.g4",
