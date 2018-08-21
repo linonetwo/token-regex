@@ -13,7 +13,7 @@ With segmented sentence:
 match parts you want ↓🔬
 
 ```js
-import tokenRegex from 'token-regex';
+import tokenRegex from 'token-regex-it';
 
 const rules = [`companyName:#公司名 营业成本 changeDirection:#动词<增长>`];
 const tokens = [
@@ -72,6 +72,28 @@ Just like we can match POS tag, we can match literal too.
 `营业 本钱` will match `营业成本`.
 
 If literal matching failed, it will try to match token that is similar to that literal. This feature is power by synonym dictionary and your custom dictionaries.
+
+### Group
+
+`companyName:(#公司名 #助词)` will put matching result of `#公司名 #助词`, which is `公司2017年的`, into result JSON, under the key `companyName`.
+
+What in the parentheses can be some legal token-regex-it tokens.
+
+### Or
+
+`#公司名|#时间词 #助词` will match `公司的` or `2017年的`.
+
+Working likes regex's `|`.
+
+### Optional
+
+`#公司名? #助词` will match `公司的` or `的`.
+
+Working likes regex's `?`.
+
+## Constrain
+
+- Only support sentence level extraction. Longer text will be slow.
 
 ## How to get tokens
 
