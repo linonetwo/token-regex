@@ -95,6 +95,11 @@ Working likes regex's `?`.
 
 - Only support sentence level extraction. Longer text will be slow.
 
+## Development
+
+1. If you need to modify syntax, Install [Antlr4](http://macappstore.org/antlr/), and run `yarn generate-parser`
+1. To start development, run `yarn dev`
+
 ## How to get tokens
 
 Use sentence segment package likes [segmentit](https://github.com/linonetwo/segmentit).

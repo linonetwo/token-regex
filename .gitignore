@@ -2,7 +2,8 @@
 .idea
 .DS_Store
 .sass-cache
-
+.antlr
+dist
 ## Directories
 log/
 dist/
