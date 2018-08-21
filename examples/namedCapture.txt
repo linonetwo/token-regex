@@ -1,0 +1,1 @@
+companyName:#公司名 #时间词 #助词 #名词 changeDirection:#动词 #名词 #v #v3
