@@ -1,0 +1,10 @@
+{
+  "antlr4.generation": {
+    "mode": "external",
+    "language": "JavaScript",
+    "outputDir": "./src/antlrGeneratedParser",
+    "listeners": true,
+    "visitors": true
+  },
+  "antlr4.referencesCodeLens.enabled": true
+}
