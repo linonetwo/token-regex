@@ -2,7 +2,7 @@ grammar TokenRegexIt;
 
 refinement: '<' STRING '>';
 
-tokenRegex: tokenRegexBlock tokenRegex | EOF;
+tokenRegex: tokenRegexBlock+;
 
 tokenRegexBlock:
 	'#' STRING (refinement)?				# posTag
