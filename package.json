@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "antlr4": "4.7.1",
+    "core-decorators": "^0.20.0",
     "lodash": "4.17.10"
   },
   "devDependencies": {
