@@ -1,7 +1,7 @@
 {
   "env": {
     "development": {
-      "plugins": [["flow-runtime", { "assert": true, "annotate": true, "warn": true }], "transform-decorators-legacy"]
+      "plugins": [["flow-runtime", { "assert": true, "annotate": true, "warn": true }]]
     }
   },
   "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]],
@@ -12,6 +12,7 @@
     "@babel/plugin-proposal-do-expressions",
     "@babel/plugin-proposal-optional-chaining",
     "@babel/plugin-syntax-flow",
-    "@babel/plugin-transform-flow-strip-types"
+    "@babel/plugin-transform-flow-strip-types",
+    "transform-decorators-legacy"
   ]
 }
