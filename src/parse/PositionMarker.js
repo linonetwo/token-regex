@@ -27,6 +27,7 @@ export default class PositionMarker implements Marker {
     };
   }
 
+  // get index for inner nodes (operators)
   concatPositionIndex(leftPosition: number, rightPosition: number): string {
     return `${leftPosition}-${rightPosition}`;
   }
@@ -36,6 +37,7 @@ export default class PositionMarker implements Marker {
     const { nullable: leftNullable, first: leftFirst, last: leftLast } = this.positionSet[leftPosition];
     const { nullable: rightNullable, first: rightFirst, last: rightLast } = this.positionSet[rightPosition];
 
+    // according to http://sist.shanghaitech.edu.cn/faculty/songfu/course/spring2017/cs131/ch3.pdf#page=111
     const nullable = leftNullable || rightNullable;
     const first = leftNullable ? [...leftFirst, ...rightFirst] : leftFirst;
     const last = rightNullable ? [...leftLast, ...rightLast] : rightLast;

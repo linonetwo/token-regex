@@ -35,10 +35,10 @@ export default class Listener extends TokenRegexItListener {
       context.tokenIndex = this.marker.concatPositionIndex(leftPosition, rightPosition);
       this.marker.concat(leftPosition, rightPosition)
     } else if (context.getChildCount() === 1 && context.getChild(0).symbol.type === -1) {
-      // EOF
+      // EOF, means argument "#", according to http://sist.shanghaitech.edu.cn/faculty/songfu/course/spring2017/cs131/ch3.pdf#page=107
       const { tokenIndex } = context.getChild(0).symbol;
       context.tokenIndex = tokenIndex;
-      this.marker.leaf(null, tokenIndex, true);
+      this.marker.leaf(null, tokenIndex);
     } else {
       console.log('context.getChildCount()', context.getChildCount());
     }
