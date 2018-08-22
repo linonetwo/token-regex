@@ -42,12 +42,6 @@ TokenRegexItVisitor.prototype.visitPosTag = function(ctx) {
 };
 
 
-// Visit a parse tree produced by TokenRegexItParser#listral.
-TokenRegexItVisitor.prototype.visitListral = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
 // Visit a parse tree produced by TokenRegexItParser#optional.
 TokenRegexItVisitor.prototype.visitOptional = function(ctx) {
   return this.visitChildren(ctx);
@@ -56,6 +50,12 @@ TokenRegexItVisitor.prototype.visitOptional = function(ctx) {
 
 // Visit a parse tree produced by TokenRegexItParser#group.
 TokenRegexItVisitor.prototype.visitGroup = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by TokenRegexItParser#literal.
+TokenRegexItVisitor.prototype.visitLiteral = function(ctx) {
   return this.visitChildren(ctx);
 };
 

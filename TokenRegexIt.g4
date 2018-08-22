@@ -8,7 +8,7 @@ tokenRegexBlock:
 	'#' STRING (refinement)?				# posTag
 	| STRING ':' tokenRegexBlock			# namedCapture
 	| '(' tokenRegex ')'				# group
-	| STRING								# listral
+	| STRING								# literal
 	| tokenRegexBlock '|' tokenRegexBlock	# or
 	| tokenRegexBlock '?'					# optional;
 

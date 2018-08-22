@@ -56,15 +56,6 @@ TokenRegexItListener.prototype.exitPosTag = function(ctx) {
 };
 
 
-// Enter a parse tree produced by TokenRegexItParser#listral.
-TokenRegexItListener.prototype.enterListral = function(ctx) {
-};
-
-// Exit a parse tree produced by TokenRegexItParser#listral.
-TokenRegexItListener.prototype.exitListral = function(ctx) {
-};
-
-
 // Enter a parse tree produced by TokenRegexItParser#optional.
 TokenRegexItListener.prototype.enterOptional = function(ctx) {
 };
@@ -80,6 +71,15 @@ TokenRegexItListener.prototype.enterGroup = function(ctx) {
 
 // Exit a parse tree produced by TokenRegexItParser#group.
 TokenRegexItListener.prototype.exitGroup = function(ctx) {
+};
+
+
+// Enter a parse tree produced by TokenRegexItParser#literal.
+TokenRegexItListener.prototype.enterLiteral = function(ctx) {
+};
+
+// Exit a parse tree produced by TokenRegexItParser#literal.
+TokenRegexItListener.prototype.exitLiteral = function(ctx) {
 };
 
 

@@ -383,41 +383,6 @@ PosTagContext.prototype.accept = function(visitor) {
 };
 
 
-function ListralContext(parser, ctx) {
-	TokenRegexBlockContext.call(this, parser);
-    TokenRegexBlockContext.prototype.copyFrom.call(this, ctx);
-    return this;
-}
-
-ListralContext.prototype = Object.create(TokenRegexBlockContext.prototype);
-ListralContext.prototype.constructor = ListralContext;
-
-TokenRegexItParser.ListralContext = ListralContext;
-
-ListralContext.prototype.STRING = function() {
-    return this.getToken(TokenRegexItParser.STRING, 0);
-};
-ListralContext.prototype.enterRule = function(listener) {
-    if(listener instanceof TokenRegexItListener ) {
-        listener.enterListral(this);
-	}
-};
-
-ListralContext.prototype.exitRule = function(listener) {
-    if(listener instanceof TokenRegexItListener ) {
-        listener.exitListral(this);
-	}
-};
-
-ListralContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof TokenRegexItVisitor ) {
-        return visitor.visitListral(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
 function OptionalContext(parser, ctx) {
 	TokenRegexBlockContext.call(this, parser);
     TokenRegexBlockContext.prototype.copyFrom.call(this, ctx);
@@ -488,6 +453,41 @@ GroupContext.prototype.accept = function(visitor) {
 };
 
 
+function LiteralContext(parser, ctx) {
+	TokenRegexBlockContext.call(this, parser);
+    TokenRegexBlockContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+LiteralContext.prototype = Object.create(TokenRegexBlockContext.prototype);
+LiteralContext.prototype.constructor = LiteralContext;
+
+TokenRegexItParser.LiteralContext = LiteralContext;
+
+LiteralContext.prototype.STRING = function() {
+    return this.getToken(TokenRegexItParser.STRING, 0);
+};
+LiteralContext.prototype.enterRule = function(listener) {
+    if(listener instanceof TokenRegexItListener ) {
+        listener.enterLiteral(this);
+	}
+};
+
+LiteralContext.prototype.exitRule = function(listener) {
+    if(listener instanceof TokenRegexItListener ) {
+        listener.exitLiteral(this);
+	}
+};
+
+LiteralContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof TokenRegexItVisitor ) {
+        return visitor.visitLiteral(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
 
 TokenRegexItParser.prototype.tokenRegexBlock = function(_p) {
 	if(_p===undefined) {
@@ -549,7 +549,7 @@ TokenRegexItParser.prototype.tokenRegexBlock = function(_p) {
             break;
 
         case 4:
-            localctx = new ListralContext(this, localctx);
+            localctx = new LiteralContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
             this.state = 28;
