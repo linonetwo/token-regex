@@ -256,9 +256,9 @@
     "@babel/helper-remap-async-to-generator" "7.0.0-rc.2"
     "@babel/plugin-syntax-async-generators" "7.0.0-rc.2"
 
-"@babel/plugin-proposal-class-properties@^7.0.0-rc.2":
+"@babel/plugin-proposal-class-properties@7.0.0-rc.2":
   version "7.0.0-rc.2"
-  resolved "http://registry.npm.taobao.org/@babel/plugin-proposal-class-properties/download/@babel/plugin-proposal-class-properties-7.0.0-rc.2.tgz#71f4f2297ec9c0848b57c231ef913bc83d49d85a"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-class-properties/-/plugin-proposal-class-properties-7.0.0-rc.2.tgz#71f4f2297ec9c0848b57c231ef913bc83d49d85a"
   dependencies:
     "@babel/helper-function-name" "7.0.0-rc.2"
     "@babel/helper-member-expression-to-functions" "7.0.0-rc.2"
@@ -267,9 +267,9 @@
     "@babel/helper-replace-supers" "7.0.0-rc.2"
     "@babel/plugin-syntax-class-properties" "7.0.0-rc.2"
 
-"@babel/plugin-proposal-decorators@^7.0.0-rc.2":
+"@babel/plugin-proposal-decorators@7.0.0-rc.2":
   version "7.0.0-rc.2"
-  resolved "http://registry.npm.taobao.org/@babel/plugin-proposal-decorators/download/@babel/plugin-proposal-decorators-7.0.0-rc.2.tgz#6bf30195bb154c3a72022126d8f0ede588d1bc54"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-decorators/-/plugin-proposal-decorators-7.0.0-rc.2.tgz#6bf30195bb154c3a72022126d8f0ede588d1bc54"
   dependencies:
     "@babel/helper-plugin-utils" "7.0.0-rc.2"
     "@babel/plugin-syntax-decorators" "7.0.0-rc.2"
@@ -538,9 +538,9 @@
   dependencies:
     regenerator-transform "^0.13.3"
 
-"@babel/plugin-transform-runtime@^7.0.0-rc.2":
+"@babel/plugin-transform-runtime@7.0.0-rc.2":
   version "7.0.0-rc.2"
-  resolved "http://registry.npm.taobao.org/@babel/plugin-transform-runtime/download/@babel/plugin-transform-runtime-7.0.0-rc.2.tgz#8e202c5144bd743038d8b8373cdfb290c9130c58"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-runtime/-/plugin-transform-runtime-7.0.0-rc.2.tgz#8e202c5144bd743038d8b8373cdfb290c9130c58"
   dependencies:
     "@babel/helper-module-imports" "7.0.0-rc.2"
     "@babel/helper-plugin-utils" "7.0.0-rc.2"
@@ -632,16 +632,16 @@
     js-levenshtein "^1.1.3"
     semver "^5.3.0"
 
-"@babel/preset-flow@^7.0.0-rc.2":
+"@babel/preset-flow@7.0.0-rc.2":
   version "7.0.0-rc.2"
-  resolved "http://registry.npm.taobao.org/@babel/preset-flow/download/@babel/preset-flow-7.0.0-rc.2.tgz#415539cd74968b1d2ae5b53fe9572f8d16a355b9"
+  resolved "https://registry.yarnpkg.com/@babel/preset-flow/-/preset-flow-7.0.0-rc.2.tgz#415539cd74968b1d2ae5b53fe9572f8d16a355b9"
   dependencies:
     "@babel/helper-plugin-utils" "7.0.0-rc.2"
     "@babel/plugin-transform-flow-strip-types" "7.0.0-rc.2"
 
-"@babel/runtime@^7.0.0-rc.2":
+"@babel/runtime@7.0.0-rc.2":
   version "7.0.0-rc.2"
-  resolved "http://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.0.0-rc.2.tgz#63082909bd27c39f92c27c641f278389ad30a478"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0-rc.2.tgz#63082909bd27c39f92c27c641f278389ad30a478"
   dependencies:
     regenerator-runtime "^0.12.0"
 
