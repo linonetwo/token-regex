@@ -4,15 +4,22 @@
       "plugins": [["flow-runtime", { "assert": true, "annotate": true, "warn": true }]]
     }
   },
-  "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]],
+  "presets": [["@babel/preset-env", { "targets": { "node": "current" } }], "@babel/preset-flow"],
   "plugins": [
     "macros",
+    "lodash",
     "@babel/plugin-syntax-dynamic-import",
     "dynamic-import-node-babel-7",
     "@babel/plugin-proposal-do-expressions",
     "@babel/plugin-proposal-optional-chaining",
-    "@babel/plugin-syntax-flow",
-    "@babel/plugin-transform-flow-strip-types",
-    "transform-decorators-legacy"
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "helpers": true,
+        "regenerator": false
+      }
+    ]
   ]
 }
