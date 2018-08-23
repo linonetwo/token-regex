@@ -3565,6 +3565,12 @@ parallel-transform@^1.1.0:
     inherits "^2.0.3"
     readable-stream "^2.1.5"
 
+param.macro@^2.1.0:
+  version "2.1.0"
+  resolved "http://registry.npm.taobao.org/param.macro/download/param.macro-2.1.0.tgz#b99a0b30cb75a788ac148d6e87f9896c69f57ab5"
+  dependencies:
+    babel-plugin-macros "^2.2.2"
+
 parse-asn1@^5.0.0:
   version "5.1.1"
   resolved "http://registry.npm.taobao.org/parse-asn1/download/parse-asn1-5.1.1.tgz#f6bf293818332bd0dab54efb16087724745e6ca8"
