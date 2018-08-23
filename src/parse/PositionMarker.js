@@ -1,5 +1,6 @@
 /* eslint-disable class-methods-use-this */
 // @flow
+import { uniq } from 'lodash';
 import type { Marker } from './Listener';
 
 export type PositionSet = {
@@ -10,10 +11,22 @@ export type PositionSet = {
     last: number[],
     follow?: number[],
   },
-}
+};
 
 export default class PositionMarker implements Marker {
   positionSet: PositionSet = {};
+
+  getLastPositions(position: number | string) {
+    return this.positionSet[position].last;
+  }
+
+  getFirstPositions(position: number | string) {
+    return this.positionSet[position].first;
+  }
+
+  setFollowPosition(position: number | string, followPositions: number[]) {
+    this.positionSet[position].follow = uniq([...(this.positionSet[position].follow || []), ...followPositions]);
+  }
 
   /** evaluate firstPos, lastPos, nullable of a Leaf token */
   leaf(token: string | null, position: number, nullable?: boolean = false): void {

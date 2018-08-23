@@ -7,8 +7,7 @@ import { _ } from 'param.macro';
 import { TokenRegexItLexer } from '../antlrGeneratedParser/TokenRegexItLexer';
 import { TokenRegexItParser } from '../antlrGeneratedParser/TokenRegexItParser';
 import Listener, { type Marker } from './Listener';
-import PositionMarker from './PositionMarker';
-import followPosition from './followPosition';
+import PositionMarker, { type PositionSet } from './PositionMarker';
 
 function parse(coolProgram: string) {
   const inputStream = new InputStream(coolProgram);
@@ -20,12 +19,14 @@ function parse(coolProgram: string) {
   return tokenRegexItAst;
 }
 
-function visitAST(ast): Marker {
+function markPosition(ast): Marker {
   const positionMarker: Marker = new PositionMarker();
-  const listener = new Listener(positionMarker);
-  // working in AST and trigger methods in listener, listener will add marks to marker
   const walker = new ParseTreeWalker();
-  walker.walk(listener, ast);
+  // First pass. Walking in AST and triggering methods in listener, listener will add marks to marker
+  walker.walk(new Listener(positionMarker), ast);
+  // second pass, calculateFollowPosition
+
+  walker.walk(new Listener(positionMarker, true), ast);
   // return position marks for DFA building
   return positionMarker;
 }
@@ -33,6 +34,6 @@ function visitAST(ast): Marker {
 export default (tokenRegexString: string) =>
   flow(
     parse,
-    visitAST,
-    followPosition(_.positionSet),
+    markPosition,
+    // buildDFA(_.positionSet),
   )(tokenRegexString);
