@@ -2,11 +2,13 @@
 import { InputStream, CommonTokenStream } from 'antlr4';
 import { ParseTreeWalker } from 'antlr4/tree';
 import { flow } from 'lodash';
+import { _ } from 'param.macro';
 
 import { TokenRegexItLexer } from '../antlrGeneratedParser/TokenRegexItLexer';
 import { TokenRegexItParser } from '../antlrGeneratedParser/TokenRegexItParser';
-import Listener,  { type Marker } from './Listener';
+import Listener, { type Marker } from './Listener';
 import PositionMarker from './PositionMarker';
+import followPosition from './followPosition';
 
 function parse(coolProgram: string) {
   const inputStream = new InputStream(coolProgram);
@@ -32,4 +34,5 @@ export default (tokenRegexString: string) =>
   flow(
     parse,
     visitAST,
+    followPosition(_.positionSet),
   )(tokenRegexString);

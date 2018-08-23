@@ -2,16 +2,18 @@
 // @flow
 import type { Marker } from './Listener';
 
+export type PositionSet = {
+  [position: string | number]: {
+    token?: string | null,
+    nullable: boolean,
+    first: number[],
+    last: number[],
+    follow?: number[],
+  },
+}
+
 export default class PositionMarker implements Marker {
-  positionSet: {
-    [position: string | number]: {
-      token?: string | null,
-      nullable: boolean,
-      first: number[],
-      last: number[],
-      follow: number[],
-    },
-  } = {};
+  positionSet: PositionSet = {};
 
   /** evaluate firstPos, lastPos, nullable of a Leaf token */
   leaf(token: string | null, position: number, nullable?: boolean = false): void {
@@ -46,7 +48,6 @@ export default class PositionMarker implements Marker {
       nullable,
       first,
       last,
-      follow: [],
     };
   }
 }
