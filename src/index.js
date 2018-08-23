@@ -7,4 +7,4 @@ const input = preval`
   module.exports = readFileSync(join(__dirname, '../examples/literal.txt'), 'utf8');
 `;
 
-console.log(JSON.stringify(parse(input), null, '  '));
+parse(input);

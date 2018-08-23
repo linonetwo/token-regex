@@ -16,6 +16,8 @@ export type PositionSet = {
 export default class PositionMarker implements Marker {
   positionSet: PositionSet = {};
 
+  rootPosition: string | number = 0;
+
   getLastPositions(position: number | string) {
     return this.positionSet[position].last;
   }

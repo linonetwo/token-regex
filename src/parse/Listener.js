@@ -4,6 +4,7 @@ import { TokenRegexItParser } from '../antlrGeneratedParser/TokenRegexItParser';
 import { TokenRegexItListener } from '../antlrGeneratedParser/TokenRegexItListener';
 
 export interface Marker {
+  rootPosition: string | number;
   getLastPositions: (position: number | string) => Array<number>;
   getFirstPositions: (position: number | string) => Array<number>;
   setFollowPosition: (position: number | string, followPositions: Array<number>) => void;
@@ -40,10 +41,12 @@ export default class Listener extends TokenRegexItListener {
     if (context.getChildCount() === 2) {
       const leftPosition = context.getChild(0).tokenIndex;
       const rightPosition = context.getChild(1).tokenIndex;
-      context.tokenIndex = this.marker.concatPositionIndex(leftPosition, rightPosition);
+      const currentPosition = this.marker.concatPositionIndex(leftPosition, rightPosition);
+      context.tokenIndex = currentPosition;
       if (!this.calculateFollowPosition) {
         // first pass
         this.marker.concat(leftPosition, rightPosition);
+        this.marker.rootPosition = currentPosition;
       } else {
         /** Second pass. Calculate follow position for tokens based on firstPosition, lastPosition and nullable. Reference: http://sist.shanghaitech.edu.cn/faculty/songfu/course/spring2017/cs131/ch3.pdf#page=111 */
         for (const position of this.marker.getLastPositions(leftPosition)) {
