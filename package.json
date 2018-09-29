@@ -54,7 +54,7 @@
     "flow-runtime": "0.17.0",
     "flow-typed": "2.5.1",
     "webpack": "4.17.1",
-    "webpack-cli": "3.1.0",
+    "webpack-cli": "3.1.2",
     "webpack-merge": "4.1.4"
   }
 }
